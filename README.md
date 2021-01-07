@@ -40,7 +40,7 @@ All three packages can be viewed by scrolling the screen up or down.
 
 ## Requirements
 
-- Must compile (No Errors, No Warnings)
+- Must compile (No Errors or warnings)
 - Swift (No Objective-C)
 - UIKit (Not ready for SwiftUI yet!)
 - Layout is done programmatically (No storyboards or nibs)
