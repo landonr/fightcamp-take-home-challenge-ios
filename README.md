@@ -68,7 +68,7 @@ Once completed, email us a Zipped version of your Xcode project with all source 
 
 It should take approximately 3 hours to complete **Goal level 1**. 
 
-It should take approximately 1 more hour in order to complete **Goal level 2&3**
+It should take approximately 1 more hour in order to complete **Goal level 2 & 3**
 
 Feel free to take extra time to perfect your solution.
 
