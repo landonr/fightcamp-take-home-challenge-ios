@@ -29,7 +29,8 @@ In this case, we should be able to easily change the code so that another packag
 
 #### Goal level 2
 
-The thumbnail section is interactive. Bonus if you update the preview image when one of the 4 thumbnails is tapped on.
+The thumbnail section is interactive. The border color of the thumbnail and the preview image update when 
+one of the 4 thumbnails is tapped on.
 
 
 #### Goal level 3
