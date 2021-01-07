@@ -4,7 +4,10 @@ Hey! Congratulations on making it to the next step in the interview process. We 
 
 ## Expectations
 
-Replicate the FightCamp package selection (webpage) into a native iOS App using Swift and UIKit. See the image below as a reference:
+Replicate the FightCamp package selection designs into a shippable native iOS App using Swift and UIKit.  
+
+
+See the image below as a reference:
 
 ![](img/mockups-01.png)
 
@@ -19,33 +22,38 @@ There are 3 packages available:
 - FightCamp Connect
 
 #### Goal level 1
-Only one package (1/3) is displayed on the screen. 
 
-In this case, we should be able to easily change the code so we can test another package.
+One of the three packages is displayed on the screen.
+
+In this case, we should be able to easily change the code so that another package can be displayed.
 
 #### Goal level 2
 
-Have the thumbnails section interactive; possibility to change the preview image by tapping on one of the 4 thumbnails.
+The thumbnail section is interactive. The border color of the thumbnail and the preview image update when 
+one of the 4 thumbnails is tapped on.
+
 
 #### Goal level 3
-Every package (3/3) are displayed on the screen and embedded into a vertical scroll view (UIScrollView, UITableView or UICollectionView). It's possible to look at each of 3 packages by scrolling up/down.
+
+All three packages are displayed on the screen and embedded into a scrolling view (UIScrollView, UITableView, UICollectionView). 
+All three packages can be viewed by scrolling the screen up or down.
+
 
 ## Requirements
 
-- Must compile
-- Swift (no Obj-c)
-- UIKit (not ready to SwiftUI yet!)
-- No storyboard or nibs - everything programmatically (Autolayout or frame)
-- We recommend MVVM achitecture (even considering the small size of the app)
+- Must compile (No Errors or warnings)
+- Swift (No Objective-C)
+- UIKit (Not ready for SwiftUI yet!)
+- Layout is done programmatically (No storyboards or nibs)
+- Use MVVM architecture
 - Light & dark mode compatible
 - No third party libraries
-- iPad layout isn't supported
-- Support iPhones with a screen equal or greater to 4.7in
-- The UI isn't hardcoded; `packages.json` is used to populate the UI
+- Support all iPhones with a screen size greater than or equal to 4.7 inches (Support for iPad is not required)
+- The UI should not be hardcoded (Use `packages.json` to simulate an API call and populate the UI) 
 
 ## Project Submission
 
-Fork this repository to get access to the configured XCode project and the helper files.
+Download this repository to get access to the configured XCode project and the helper files.
 
 Try to accomplish as many goal levels as you can.
 
@@ -53,17 +61,17 @@ Create a small README with the following items:
 
 * Small summary of the reasoning behind your technical decisions.
 * What is missing and why. (if applicable)
-* Any other information you believe is necessary for us to know about the issue/solution.
+* Any other information you believe is necessary for us to know about your submission.
 
 Once completed, email us a Zipped version of your Xcode project with all source files.
 
 ## Time allotment 
 
-It should take aproximately 2-3 hours to complete **Goal level 1**. 
+It should take approximately 3 hours to complete **Goal level 1**. 
 
-An additional work hour can be expected in order to complete **Goal level 2 & 3**.
+It should take approximately 1 more hour in order to complete **Goal level 2 & 3**
 
-A maximum of 24 hours is given to the candidate to submit the zipped project. 
+Feel free to take extra time to perfect your solution.
 
 ## Evaluation
 
@@ -90,5 +98,3 @@ Formatting of the code and code comments | ++
 Refer to this image below to build the UI
 
 ![](./img/specs-01.png)
-
-
