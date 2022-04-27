@@ -1,11 +1,3 @@
-//
-//  Fonts.swift
-//  FightCamp-Homework
-//
-//  Created by Alexandre Marcotte on 6/17/20.
-//  Copyright © 2020 Alexandre Marcotte. All rights reserved.
-//
-
 import UIKit
 
 // MARK: - Font
@@ -13,22 +5,22 @@ import UIKit
 extension UIFont {
 
     /// Package title label font
-    public static var title: UIFont = UIFont(
+    public static var title: UIFont = .init(
         name: .groteskSquare,
         size: 36)!
 
     /// Package description label & package accessories label & price title label
-    public static var body: UIFont = UIFont(
+    public static var body: UIFont = .init(
         name: .graphikMedium,
         size: 16)!
 
     /// Price label font
-    public static var price: UIFont = UIFont(
+    public static var price: UIFont = .init(
         name: .graphikMedium,
         size: 26)!
 
     /// CTA button font
-    public static var button: UIFont = UIFont(
+    public static var button: UIFont = .init(
         name: .graphikMedium,
         size: 16)!
 }

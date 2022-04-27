@@ -1,11 +1,3 @@
-//
-//  Colors.swift
-//  FightCamp-Homework
-//
-//  Created by Alexandre Marcotte on 6/17/20.
-//  Copyright © 2020 Alexandre Marcotte. All rights reserved.
-//
-
 import UIKit
 
 // MARK: - Colors
@@ -14,18 +6,23 @@ extension UIColor {
 
     /// Brand red color
     public static var brandRed: UIColor = .init(hex: "#D73C4B")
+
     /// Label color
     public static var label: UIColor = .dynamicColor(
         light: .black,
         dark: .white)
+
     /// Disabled label color (excluded acessories)
     public static var disabledLabel: UIColor = .dynamicColor(
         light: .gray(level: 2),
         dark: .gray(level: 5))
+
     /// CTA button title color
     public static var buttonTitle: UIColor = .white
+
     /// CTA button background color
     public static var buttonBackground: UIColor = .brandRed
+
     /// Primary background color (package view)
     public static var primaryBackground: UIColor = .dynamicColor(
         light: .white,
@@ -111,6 +108,7 @@ extension UIColor {
                 default: return light
                 }
             }
+
         } else {
 
             return light
