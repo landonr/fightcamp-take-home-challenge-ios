@@ -15,10 +15,12 @@
 		7CDFE1DF281A07FB00BA1A3C /* FightCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1DE281A07FB00BA1A3C /* FightCampApp.swift */; };
 		7CDFE1E1281A082600BA1A3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1E0281A082600BA1A3C /* ContentView.swift */; };
 		7CDFE1E8281A0A4800BA1A3C /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD02AC249B23F30029487C /* Layout.swift */; };
+		7CDFE1EB281A0BA200BA1A3C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1EA281A0BA200BA1A3C /* Colors.swift */; };
+		7CDFE1EC281A128C00BA1A3C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9790249AC0810044B734 /* Fonts.swift */; };
+		7CDFE1ED281A12CD00BA1A3C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1EA281A0BA200BA1A3C /* Colors.swift */; };
 		C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9779249AC04D0044B734 /* AppDelegate.swift */; };
 		C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD977B249AC04D0044B734 /* SceneDelegate.swift */; };
 		C1BD9783249AC04E0044B734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9782249AC04E0044B734 /* Assets.xcassets */; };
-		C1BD978F249AC0790044B734 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD978E249AC0790044B734 /* Colors.swift */; };
 		C1BD9791249AC0810044B734 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9790249AC0810044B734 /* Fonts.swift */; };
 		C1BD9793249AC3620044B734 /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9792249AC3620044B734 /* packages.json */; };
 		C1BD979E249AFFCC0044B734 /* Font-2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979C249AFF290044B734 /* Font-2.otf */; };
@@ -33,11 +35,11 @@
 		7CDFE1E0281A082600BA1A3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7CDFE1E4281A09E100BA1A3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CDFE1E6281A09E600BA1A3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CDFE1EA281A0BA200BA1A3C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C1BD9776249AC04D0044B734 /* FC-Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC-Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BD9779249AC04D0044B734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1BD977B249AC04D0044B734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C1BD9782249AC04E0044B734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C1BD978E249AC0790044B734 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C1BD9790249AC0810044B734 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C1BD9792249AC3620044B734 /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
 		C1BD979B249AFF290044B734 /* Font-1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font-1.otf"; sourceTree = "<group>"; };
@@ -77,6 +79,9 @@
 		7CDFE1DD281A06E800BA1A3C /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				C1BD979A249AFF0C0044B734 /* Fonts */,
+				7CDFE1EA281A0BA200BA1A3C /* Colors.swift */,
+				C1BD9790249AC0810044B734 /* Fonts.swift */,
 				C1FD02AC249B23F30029487C /* Layout.swift */,
 				C1BD9782249AC04E0044B734 /* Assets.xcassets */,
 				C1BD9792249AC3620044B734 /* packages.json */,
@@ -107,8 +112,6 @@
 			isa = PBXGroup;
 			children = (
 				7CDFE1E4281A09E100BA1A3C /* Info.plist */,
-				C1FD02AB249B23E10029487C /* Helpers */,
-				C1BD979A249AFF0C0044B734 /* Fonts */,
 				C1BD9779249AC04D0044B734 /* AppDelegate.swift */,
 				C1BD977B249AC04D0044B734 /* SceneDelegate.swift */,
 			);
@@ -123,15 +126,6 @@
 				C1BD979B249AFF290044B734 /* Font-1.otf */,
 			);
 			path = Fonts;
-			sourceTree = "<group>";
-		};
-		C1FD02AB249B23E10029487C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C1BD978E249AC0790044B734 /* Colors.swift */,
-				C1BD9790249AC0810044B734 /* Fonts.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -238,6 +232,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				7CDFE1DF281A07FB00BA1A3C /* FightCampApp.swift in Sources */,
+				7CDFE1EC281A128C00BA1A3C /* Fonts.swift in Sources */,
+				7CDFE1EB281A0BA200BA1A3C /* Colors.swift in Sources */,
 				7CDFE1E1281A082600BA1A3C /* ContentView.swift in Sources */,
 				7CDFE1E8281A0A4800BA1A3C /* Layout.swift in Sources */,
 			);
@@ -248,7 +244,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BD9791249AC0810044B734 /* Fonts.swift in Sources */,
-				C1BD978F249AC0790044B734 /* Colors.swift in Sources */,
+				7CDFE1ED281A12CD00BA1A3C /* Colors.swift in Sources */,
 				C1FD02AD249B23F30029487C /* Layout.swift in Sources */,
 				C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */,
 				C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */,
