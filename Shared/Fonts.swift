@@ -31,7 +31,7 @@ extension UIFont {
 extension Font {
 
     /// Package title label font
-    public static var title: Font {
+    public static var packageTitle: Font {
 
         #if DEBUG
         if ProcessInfo.isPreview {
@@ -44,7 +44,7 @@ extension Font {
     }
 
     /// Package description label & package accessories label & price title label
-    public static var body: Font {
+    public static var packageBody: Font {
 
         #if DEBUG
         if ProcessInfo.isPreview {
@@ -57,7 +57,7 @@ extension Font {
     }
 
     /// Price label font
-    public static var price: Font {
+    public static var packagePrice: Font {
 
         #if DEBUG
         if ProcessInfo.isPreview {
