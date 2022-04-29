@@ -7,10 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7CDFE1D22819FAE500BA1A3C /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9792249AC3620044B734 /* packages.json */; };
+		7CDFE1D32819FAE500BA1A3C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9782249AC04E0044B734 /* Assets.xcassets */; };
+		7CDFE1D42819FAE500BA1A3C /* Font-2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979C249AFF290044B734 /* Font-2.otf */; };
+		7CDFE1D52819FAE500BA1A3C /* Font-3.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979D249AFF290044B734 /* Font-3.otf */; };
+		7CDFE1D62819FAE500BA1A3C /* Font-1.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979B249AFF290044B734 /* Font-1.otf */; };
+		7CDFE1DF281A07FB00BA1A3C /* FightCampApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1DE281A07FB00BA1A3C /* FightCampApp.swift */; };
+		7CDFE1E1281A082600BA1A3C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1E0281A082600BA1A3C /* ContentView.swift */; };
+		7CDFE1E8281A0A4800BA1A3C /* Layout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FD02AC249B23F30029487C /* Layout.swift */; };
+		7CDFE1EB281A0BA200BA1A3C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1EA281A0BA200BA1A3C /* Colors.swift */; };
+		7CDFE1EC281A128C00BA1A3C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9790249AC0810044B734 /* Fonts.swift */; };
+		7CDFE1ED281A12CD00BA1A3C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1EA281A0BA200BA1A3C /* Colors.swift */; };
 		C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9779249AC04D0044B734 /* AppDelegate.swift */; };
 		C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD977B249AC04D0044B734 /* SceneDelegate.swift */; };
 		C1BD9783249AC04E0044B734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9782249AC04E0044B734 /* Assets.xcassets */; };
-		C1BD978F249AC0790044B734 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD978E249AC0790044B734 /* Colors.swift */; };
 		C1BD9791249AC0810044B734 /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9790249AC0810044B734 /* Fonts.swift */; };
 		C1BD9793249AC3620044B734 /* packages.json in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9792249AC3620044B734 /* packages.json */; };
 		C1BD979E249AFFCC0044B734 /* Font-2.otf in Resources */ = {isa = PBXBuildFile; fileRef = C1BD979C249AFF290044B734 /* Font-2.otf */; };
@@ -20,12 +30,16 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7CDFE1DA2819FAE500BA1A3C /* FightCamp-Homework-SwiftUI.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FightCamp-Homework-SwiftUI.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7CDFE1DE281A07FB00BA1A3C /* FightCampApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FightCampApp.swift; sourceTree = "<group>"; };
+		7CDFE1E0281A082600BA1A3C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		7CDFE1E4281A09E100BA1A3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CDFE1E6281A09E600BA1A3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7CDFE1EA281A0BA200BA1A3C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C1BD9776249AC04D0044B734 /* FC-Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC-Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BD9779249AC04D0044B734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1BD977B249AC04D0044B734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		C1BD9782249AC04E0044B734 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		C1BD9787249AC04E0044B734 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C1BD978E249AC0790044B734 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		C1BD9790249AC0810044B734 /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		C1BD9792249AC3620044B734 /* packages.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = packages.json; sourceTree = "<group>"; };
 		C1BD979B249AFF290044B734 /* Font-1.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font-1.otf"; sourceTree = "<group>"; };
@@ -35,6 +49,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		7CDFE1D02819FAE500BA1A3C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1BD9773249AC04D0044B734 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -45,10 +66,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7CDFE1DC281A06B400BA1A3C /* FightCamp-Homework-SwiftUI */ = {
+			isa = PBXGroup;
+			children = (
+				7CDFE1E6281A09E600BA1A3C /* Info.plist */,
+				7CDFE1DE281A07FB00BA1A3C /* FightCampApp.swift */,
+				7CDFE1E0281A082600BA1A3C /* ContentView.swift */,
+			);
+			path = "FightCamp-Homework-SwiftUI";
+			sourceTree = "<group>";
+		};
+		7CDFE1DD281A06E800BA1A3C /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				C1BD979A249AFF0C0044B734 /* Fonts */,
+				7CDFE1EA281A0BA200BA1A3C /* Colors.swift */,
+				C1BD9790249AC0810044B734 /* Fonts.swift */,
+				C1FD02AC249B23F30029487C /* Layout.swift */,
+				C1BD9782249AC04E0044B734 /* Assets.xcassets */,
+				C1BD9792249AC3620044B734 /* packages.json */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
 		C1BD976D249AC04D0044B734 = {
 			isa = PBXGroup;
 			children = (
-				C1BD9778249AC04D0044B734 /* FightCamp-Homework */,
+				7CDFE1DD281A06E800BA1A3C /* Shared */,
+				7CDFE1DC281A06B400BA1A3C /* FightCamp-Homework-SwiftUI */,
+				C1BD9778249AC04D0044B734 /* FightCamp-Homework-UIKit */,
 				C1BD9777249AC04D0044B734 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,50 +103,54 @@
 			isa = PBXGroup;
 			children = (
 				C1BD9776249AC04D0044B734 /* FC-Homework.app */,
+				7CDFE1DA2819FAE500BA1A3C /* FightCamp-Homework-SwiftUI.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		C1BD9778249AC04D0044B734 /* FightCamp-Homework */ = {
+		C1BD9778249AC04D0044B734 /* FightCamp-Homework-UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				C1FD02AB249B23E10029487C /* Helpers */,
-				C1BD979A249AFF0C0044B734 /* Assets */,
+				7CDFE1E4281A09E100BA1A3C /* Info.plist */,
 				C1BD9779249AC04D0044B734 /* AppDelegate.swift */,
-				C1BD9792249AC3620044B734 /* packages.json */,
 				C1BD977B249AC04D0044B734 /* SceneDelegate.swift */,
-				C1BD9787249AC04E0044B734 /* Info.plist */,
-				C1BD9782249AC04E0044B734 /* Assets.xcassets */,
 			);
-			path = "FightCamp-Homework";
+			path = "FightCamp-Homework-UIKit";
 			sourceTree = "<group>";
 		};
-		C1BD979A249AFF0C0044B734 /* Assets */ = {
+		C1BD979A249AFF0C0044B734 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				C1BD979C249AFF290044B734 /* Font-2.otf */,
 				C1BD979D249AFF290044B734 /* Font-3.otf */,
 				C1BD979B249AFF290044B734 /* Font-1.otf */,
 			);
-			path = Assets;
-			sourceTree = "<group>";
-		};
-		C1FD02AB249B23E10029487C /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				C1BD978E249AC0790044B734 /* Colors.swift */,
-				C1BD9790249AC0810044B734 /* Fonts.swift */,
-				C1FD02AC249B23F30029487C /* Layout.swift */,
-			);
-			path = Helpers;
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		C1BD9775249AC04D0044B734 /* FightCamp-Homework */ = {
+		7CDFE1C92819FAE500BA1A3C /* FightCamp-Homework-SwiftUI */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C1BD978A249AC04E0044B734 /* Build configuration list for PBXNativeTarget "FightCamp-Homework" */;
+			buildConfigurationList = 7CDFE1D72819FAE500BA1A3C /* Build configuration list for PBXNativeTarget "FightCamp-Homework-SwiftUI" */;
+			buildPhases = (
+				7CDFE1CA2819FAE500BA1A3C /* Sources */,
+				7CDFE1D02819FAE500BA1A3C /* Frameworks */,
+				7CDFE1D12819FAE500BA1A3C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "FightCamp-Homework-SwiftUI";
+			productName = "FightCamp-Homework";
+			productReference = 7CDFE1DA2819FAE500BA1A3C /* FightCamp-Homework-SwiftUI.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C1BD9775249AC04D0044B734 /* FightCamp-Homework-UIKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C1BD978A249AC04E0044B734 /* Build configuration list for PBXNativeTarget "FightCamp-Homework-UIKit" */;
 			buildPhases = (
 				C1BD9772249AC04D0044B734 /* Sources */,
 				C1BD9773249AC04D0044B734 /* Frameworks */,
@@ -110,7 +160,7 @@
 			);
 			dependencies = (
 			);
-			name = "FightCamp-Homework";
+			name = "FightCamp-Homework-UIKit";
 			productName = "FightCamp-Homework";
 			productReference = C1BD9776249AC04D0044B734 /* FC-Homework.app */;
 			productType = "com.apple.product-type.application";
@@ -122,7 +172,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1150;
-				LastUpgradeCheck = 1150;
+				LastUpgradeCheck = 1330;
 				ORGANIZATIONNAME = "Alexandre Marcotte";
 				TargetAttributes = {
 					C1BD9775249AC04D0044B734 = {
@@ -143,12 +193,25 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				C1BD9775249AC04D0044B734 /* FightCamp-Homework */,
+				C1BD9775249AC04D0044B734 /* FightCamp-Homework-UIKit */,
+				7CDFE1C92819FAE500BA1A3C /* FightCamp-Homework-SwiftUI */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		7CDFE1D12819FAE500BA1A3C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CDFE1D22819FAE500BA1A3C /* packages.json in Resources */,
+				7CDFE1D32819FAE500BA1A3C /* Assets.xcassets in Resources */,
+				7CDFE1D42819FAE500BA1A3C /* Font-2.otf in Resources */,
+				7CDFE1D52819FAE500BA1A3C /* Font-3.otf in Resources */,
+				7CDFE1D62819FAE500BA1A3C /* Font-1.otf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1BD9774249AC04D0044B734 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -164,12 +227,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		7CDFE1CA2819FAE500BA1A3C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7CDFE1DF281A07FB00BA1A3C /* FightCampApp.swift in Sources */,
+				7CDFE1EC281A128C00BA1A3C /* Fonts.swift in Sources */,
+				7CDFE1EB281A0BA200BA1A3C /* Colors.swift in Sources */,
+				7CDFE1E1281A082600BA1A3C /* ContentView.swift in Sources */,
+				7CDFE1E8281A0A4800BA1A3C /* Layout.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		C1BD9772249AC04D0044B734 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C1BD9791249AC0810044B734 /* Fonts.swift in Sources */,
-				C1BD978F249AC0790044B734 /* Colors.swift in Sources */,
+				7CDFE1ED281A12CD00BA1A3C /* Colors.swift in Sources */,
 				C1FD02AD249B23F30029487C /* Layout.swift in Sources */,
 				C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */,
 				C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */,
@@ -179,6 +254,44 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
+		7CDFE1D82819FAE500BA1A3C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7DJ322W5H;
+				INFOPLIST_FILE = "FightCamp-Homework-SwiftUI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fightcamp.homework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		7CDFE1D92819FAE500BA1A3C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = N7DJ322W5H;
+				INFOPLIST_FILE = "FightCamp-Homework-SwiftUI/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.fightcamp.homework;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		C1BD9788249AC04E0044B734 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -205,6 +318,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -265,6 +379,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -299,7 +414,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7DJ322W5H;
-				INFOPLIST_FILE = "FightCamp-Homework/Info.plist";
+				INFOPLIST_FILE = "FightCamp-Homework-UIKit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -318,7 +433,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7DJ322W5H;
-				INFOPLIST_FILE = "FightCamp-Homework/Info.plist";
+				INFOPLIST_FILE = "FightCamp-Homework-UIKit/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -334,6 +449,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		7CDFE1D72819FAE500BA1A3C /* Build configuration list for PBXNativeTarget "FightCamp-Homework-SwiftUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7CDFE1D82819FAE500BA1A3C /* Debug */,
+				7CDFE1D92819FAE500BA1A3C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		C1BD9771249AC04D0044B734 /* Build configuration list for PBXProject "FightCamp-Homework" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -343,7 +467,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C1BD978A249AC04E0044B734 /* Build configuration list for PBXNativeTarget "FightCamp-Homework" */ = {
+		C1BD978A249AC04E0044B734 /* Build configuration list for PBXNativeTarget "FightCamp-Homework-UIKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				C1BD978B249AC04E0044B734 /* Debug */,
