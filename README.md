@@ -4,7 +4,7 @@ Hey! Congratulations on making it to the next step in the interview process. We 
 
 ## Expectations
 
-Replicate the FightCamp package selection designs into a **shippable** native iOS App using Swift and UIKit or SwiftUI.
+Replicate the FightCamp package selection designs into a **shippable** native iOS App using Swift and SwiftUI.
 
 See the image below as a reference:
 
@@ -78,7 +78,7 @@ Readability of the code (easy to read, easy to navigate, well structured)  | +++
 UI is performant and matches the design | ++++
 Respect of the MVVM architecture (e.g. UI separation from the model) | +++
 Simplicity of the solutions used | +++
-Use of the Swift functionalities | +++
+Use of the Swift/SwiftUI functionalities | +++
 Formatting of the code and code comments | ++
 
 ## Helper Files
