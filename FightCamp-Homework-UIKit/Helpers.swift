@@ -16,6 +16,11 @@ extension UIStackView {
 }
 
 extension UIView {
+    func anchorAspectRatio(_ multiplier: CGFloat = 1) {
+        translatesAutoresizingMaskIntoConstraints = false
+        widthAnchor.constraint(equalTo: heightAnchor, multiplier: multiplier).isActive = true
+    }
+    
     func pin(superView: UIView) {
         self.translatesAutoresizingMaskIntoConstraints = false
         
