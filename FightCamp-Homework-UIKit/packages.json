@@ -22,7 +22,7 @@
     ],
     "payment": "one-time payment",
     "price": 1219,
-    "action": "view package",
+    "action": "view package"
   },
   {
     "title": "fightcamp tribe",
@@ -46,7 +46,7 @@
     ],
     "payment": "one-time payment",
     "price": 1349,
-    "action": "view package",
+    "action": "view package"
   },
   {
     "title": "fightcamp connect",
@@ -71,6 +71,6 @@
     ],
     "payment": "one-time payment",
     "price": 439,
-    "action": "view package",
+    "action": "view package"
   }
 ]

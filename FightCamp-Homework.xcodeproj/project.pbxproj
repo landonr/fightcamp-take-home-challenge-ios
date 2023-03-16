@@ -18,6 +18,10 @@
 		7CDFE1EB281A0BA200BA1A3C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1EA281A0BA200BA1A3C /* Colors.swift */; };
 		7CDFE1EC281A128C00BA1A3C /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9790249AC0810044B734 /* Fonts.swift */; };
 		7CDFE1ED281A12CD00BA1A3C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7CDFE1EA281A0BA200BA1A3C /* Colors.swift */; };
+		7F5B19DA29C3C34000341298 /* PackageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19D929C3C34000341298 /* PackageView.swift */; };
+		7F5B19DC29C3C36000341298 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19DB29C3C36000341298 /* MainViewController.swift */; };
+		7F5B19DE29C3C37100341298 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19DD29C3C37100341298 /* Helpers.swift */; };
+		7F5B19E029C3C46600341298 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19DF29C3C46600341298 /* Package.swift */; };
 		C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9779249AC04D0044B734 /* AppDelegate.swift */; };
 		C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD977B249AC04D0044B734 /* SceneDelegate.swift */; };
 		C1BD9783249AC04E0044B734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9782249AC04E0044B734 /* Assets.xcassets */; };
@@ -36,6 +40,10 @@
 		7CDFE1E4281A09E100BA1A3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CDFE1E6281A09E600BA1A3C /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7CDFE1EA281A0BA200BA1A3C /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
+		7F5B19D929C3C34000341298 /* PackageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageView.swift; sourceTree = "<group>"; };
+		7F5B19DB29C3C36000341298 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		7F5B19DD29C3C37100341298 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		7F5B19DF29C3C46600341298 /* Package.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
 		C1BD9776249AC04D0044B734 /* FC-Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC-Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BD9779249AC04D0044B734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1BD977B249AC04D0044B734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -84,9 +92,16 @@
 				C1BD9790249AC0810044B734 /* Fonts.swift */,
 				C1FD02AC249B23F30029487C /* Layout.swift */,
 				C1BD9782249AC04E0044B734 /* Assets.xcassets */,
-				C1BD9792249AC3620044B734 /* packages.json */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		7F5B19D829C3C33A00341298 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				7F5B19D929C3C34000341298 /* PackageView.swift */,
+			);
+			path = views;
 			sourceTree = "<group>";
 		};
 		C1BD976D249AC04D0044B734 = {
@@ -111,9 +126,14 @@
 		C1BD9778249AC04D0044B734 /* FightCamp-Homework-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				C1BD9792249AC3620044B734 /* packages.json */,
+				7F5B19D829C3C33A00341298 /* views */,
 				7CDFE1E4281A09E100BA1A3C /* Info.plist */,
 				C1BD9779249AC04D0044B734 /* AppDelegate.swift */,
 				C1BD977B249AC04D0044B734 /* SceneDelegate.swift */,
+				7F5B19DB29C3C36000341298 /* MainViewController.swift */,
+				7F5B19DF29C3C46600341298 /* Package.swift */,
+				7F5B19DD29C3C37100341298 /* Helpers.swift */,
 			);
 			path = "FightCamp-Homework-UIKit";
 			sourceTree = "<group>";
@@ -243,9 +263,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F5B19DC29C3C36000341298 /* MainViewController.swift in Sources */,
 				C1BD9791249AC0810044B734 /* Fonts.swift in Sources */,
 				7CDFE1ED281A12CD00BA1A3C /* Colors.swift in Sources */,
+				7F5B19E029C3C46600341298 /* Package.swift in Sources */,
 				C1FD02AD249B23F30029487C /* Layout.swift in Sources */,
+				7F5B19DA29C3C34000341298 /* PackageView.swift in Sources */,
+				7F5B19DE29C3C37100341298 /* Helpers.swift in Sources */,
 				C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */,
 				C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */,
 			);
@@ -415,7 +439,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7DJ322W5H;
 				INFOPLIST_FILE = "FightCamp-Homework-UIKit/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -434,7 +458,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = N7DJ322W5H;
 				INFOPLIST_FILE = "FightCamp-Homework-UIKit/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
