@@ -1,0 +1,12 @@
+UIKit app
+
+MainViewController
+	- Shows the data in a view
+	- holds MainViewModel
+
+MainViewModel
+	- holds the data for the UI
+	- loads the data from a file
+
+PackageView
+	- shows the Package in a styled cell

@@ -8,6 +8,44 @@
 
 import UIKit
 
+class PackageImageView: UIImageView {
+    var bordered = false {
+            didSet {
+            setBorder()
+        }
+    }
+
+    fileprivate func setBorder() {
+        if bordered {
+            layer.borderColor = UIColor.brandRed.cgColor
+            layer.borderWidth = .thumbnailBorderWidth
+        } else {
+            layer.borderColor = UIColor.clear.cgColor
+            layer.borderWidth = 0
+        }
+    }
+    
+    fileprivate func sharedInit() {
+        layer.cornerRadius = .thumbnailRadius
+        setBorder()
+        clipsToBounds = true
+    }
+    
+    override init(image: UIImage?) {
+        super.init(image: image)
+        sharedInit()
+    }
+    
+    override init(frame: CGRect) {
+        super.init(frame: frame)
+        sharedInit()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
 class PackageView: UIView {
     let stackView: UIStackView = {
         let stackView = UIStackView()
@@ -29,6 +67,13 @@ class PackageView: UIView {
         label.font = .body
         
         return label
+    }()
+    
+    let mainImageView: PackageImageView = {
+        let imageView = PackageImageView(frame: .zero)
+        imageView.contentMode = .scaleAspectFit
+        imageView.widthAnchor.constraint(equalTo: imageView.heightAnchor, multiplier: 4/3).isActive = true
+        return imageView
     }()
     
     let includedExcludedTextView: UITextView = {
@@ -60,7 +105,15 @@ class PackageView: UIView {
         addSubview(stackView)
         backgroundColor = .white
         stackView.pin(superView: self)
-        [titleLabel, descLabel, includedExcludedTextView, paymentLabel, priceLabel].forEach { view in
+
+        [
+            titleLabel,
+            descLabel,
+            mainImageView,
+            includedExcludedTextView,
+            paymentLabel,
+            priceLabel
+        ].forEach { view in
             stackView.addArrangedSubview(view)
         }
     }
@@ -98,9 +151,26 @@ class PackageView: UIView {
             includedExcludedTextView.text = includedText
         }
         
+        if let imageString = package.thumbnailUrls.first,
+            let imageURL = URL(string: imageString),
+            let image = ImageService.getImage(url: imageURL) {
+            mainImageView.image = image
+        }
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+class ImageService {
+    static func getImage(url: URL) -> UIImage? {
+        do {
+            let data = try Data(contentsOf: url)
+            return UIImage(data: data)
+        } catch {
+            print(error)
+        }
+        return nil
     }
 }
