@@ -8,6 +8,48 @@
 
 import UIKit
 
+class ThumbnailButton: UIButton {
+    private var packageImageView: PackageImageView
+    var bordered = false {
+            didSet {
+            setBorder()
+        }
+    }
+
+    fileprivate func setBorder() {
+        if bordered {
+            layer.borderColor = UIColor.brandRed.cgColor
+            layer.borderWidth = .thumbnailBorderWidth
+        } else {
+            layer.borderColor = UIColor.clear.cgColor
+            layer.borderWidth = 0
+        }
+    }
+
+    override init(frame: CGRect) {
+        packageImageView = PackageImageView(frame: frame)
+        super.init(frame: frame)
+        packageImageView.anchorAspectRatio()
+        addSubview(packageImageView)
+        packageImageView.pin(superView: self)
+        layer.cornerRadius = .thumbnailRadius
+        clipsToBounds = true
+        setBorder()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func setImage(image: UIImage?) {
+        packageImageView.image = image
+    }
+    
+    func getImage() -> UIImage? {
+        return packageImageView.image
+    }
+}
+
 class PackageView: UIView {
     private enum Constants {
         static let numberOfThumbnails = 4
@@ -116,6 +158,20 @@ class PackageView: UIView {
         }
     }
     
+    private func setupThumbnailStackView() {
+        for _ in 0..<Constants.numberOfThumbnails {
+            let thumbnailButton = ThumbnailButton(frame: .zero)
+            thumbnailStackView.addArrangedSubview(thumbnailButton)
+            
+            thumbnailButton.addAction(UIAction(title: "", handler: { [weak mainImageView] action in
+                if let button = action.sender as? ThumbnailButton {
+                    mainImageView?.image = button.getImage()
+                    button.bordered = true
+                }
+            }), for: .touchUpInside)
+        }
+    }
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         layer.cornerRadius = .packageRadius
@@ -124,12 +180,7 @@ class PackageView: UIView {
         stackView.pin(superView: self)
         
         setupMainStackView()
-        
-        for _ in 0..<Constants.numberOfThumbnails {
-            let imageView = PackageImageView(frame: .zero)
-            imageView.anchorAspectRatio()
-            thumbnailStackView.addArrangedSubview(imageView)
-        }
+        setupThumbnailStackView()
         
         [mainImageView, thumbnailStackView].forEach {
             imageStackView.addArrangedSubview($0)
@@ -140,19 +191,6 @@ class PackageView: UIView {
         }
     }
     
-    private func combineStringArray(
-        _ strings: [String],
-        addNewLine: Bool = false
-    ) -> String {
-        return strings.reduce("") { partialResult, newText in
-            let capitalizedText = newText.capitalized
-            guard !addNewLine else {
-                return partialResult + "\n" + capitalizedText
-            }
-            return partialResult != "" ? partialResult + "\n" + capitalizedText : capitalizedText
-        }
-    }
-    
     fileprivate func loadImages(_ package: PackageElement) async {
         Task {
             let images = package.thumbnailUrls
@@ -160,12 +198,8 @@ class PackageView: UIView {
             
             for (index, imageURL) in images.enumerated() {
                 let image = try await ImageService.getImage(url: imageURL)
-                if let imageView = thumbnailStackView.arrangedSubviews[index] as? PackageImageView {
-                    if index == 0 {
-                        imageView.bordered = true
-                        mainImageView.image = image
-                    }
-                    imageView.image = image
+                if let button = thumbnailStackView.arrangedSubviews[index] as? ThumbnailButton {
+                    button.setImage(image: image)
                 }
             }
         }
@@ -189,10 +223,10 @@ class PackageView: UIView {
     }
     
     private func setAttributedText(_ package: PackageElement) {
-        let includedText = combineStringArray(package.included)
+        let includedText = package.included.combine()
         if let excludedStrings = package.excluded,
            excludedStrings.count > 0 {
-            let excludedText = combineStringArray(excludedStrings, addNewLine: true)
+            let excludedText = excludedStrings.combine(addNewLine: true)
             let includedAttributedString = NSMutableAttributedString(
                 string: includedText,
                 attributes: getAttributes()

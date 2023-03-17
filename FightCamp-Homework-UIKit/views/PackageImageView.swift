@@ -9,26 +9,9 @@
 import UIKit
 
 class PackageImageView: UIImageView {
-    var bordered = false {
-            didSet {
-            setBorder()
-        }
-    }
-
-    fileprivate func setBorder() {
-        if bordered {
-            layer.borderColor = UIColor.brandRed.cgColor
-            layer.borderWidth = .thumbnailBorderWidth
-        } else {
-            layer.borderColor = UIColor.clear.cgColor
-            layer.borderWidth = 0
-        }
-    }
-    
     fileprivate func sharedInit() {
         layer.cornerRadius = .thumbnailRadius
         backgroundColor = .secondaryBackground
-        setBorder()
         clipsToBounds = true
     }
     

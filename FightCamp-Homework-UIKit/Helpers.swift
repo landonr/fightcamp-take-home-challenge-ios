@@ -8,6 +8,20 @@
 
 import UIKit
 
+extension Array where Element == String {
+    func combine(
+        addNewLine: Bool = false
+    ) -> String {
+        return reduce("") { partialResult, newText in
+            let capitalizedText = newText.capitalized
+            guard !addNewLine else {
+                return partialResult + "\n" + capitalizedText
+            }
+            return partialResult != "" ? partialResult + "\n" + capitalizedText : capitalizedText
+        }
+    }
+}
+
 extension UIStackView {
     func setMargin(_ margin: CGFloat) {
         layoutMargins = .init(top: margin, left: margin, bottom: margin, right: margin)
