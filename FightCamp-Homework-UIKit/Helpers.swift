@@ -15,11 +15,14 @@ extension UICollectionViewLayout {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
                                                heightDimension: .estimated(1))
+        item.contentInsets = .init(top: 0, leading: .packageSpacing, bottom: 0, trailing: .packageSpacing)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                          subitems: [item])
         let section = NSCollectionLayoutSection(group: group)
-         section.interGroupSpacing = 16
+        section.interGroupSpacing = .packageSpacing
+        
         let layout = UICollectionViewCompositionalLayout(section: section)
+        
         return layout
     }
 }

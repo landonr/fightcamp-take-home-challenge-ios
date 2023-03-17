@@ -24,18 +24,18 @@ class MainViewController: UIViewController {
             frame: .zero,
             collectionViewLayout: .createBasicListLayout()
         )
+        collectionView.backgroundColor = .clear
         collectionView.register(
             PackageCollectionViewCell.self,
             forCellWithReuseIdentifier: PackageCollectionViewCell.identifier
         )
-
         return collectionView
     }()
     
     override func viewDidLoad() {
         view.backgroundColor = .secondaryBackground
         view.addSubview(collectionView)
-        collectionView.pinToSafeArea(superView: view)
+        collectionView.pin(superView: view)
         
         dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
             guard let cell = collectionView.dequeueReusableCell(
@@ -49,13 +49,6 @@ class MainViewController: UIViewController {
         })
     
         collectionViewCancellable = viewModel.package.publisher.sink { [weak self] package in
-            if let package = package.first {
-                self?.packageView.configure(package)
-                self?.packageView.viewButton.addAction(UIAction(title: "", handler: { _ in
-                    print("view \(package.title)")
-                }), for: .touchUpInside)
-            }
-            
             var snapshot = NSDiffableDataSourceSnapshot<Int, PackageElement>()
             snapshot.appendSections([0])
             snapshot.appendItems(package)
