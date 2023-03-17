@@ -246,8 +246,7 @@ class PackageView: UIView, ObservableObject {
         Task {
             await loadImages(package)
         }
-        
-        debugPrint(viewModel.$activeIndex)
+
         cancellable = viewModel.$activeIndex.sink { [weak self] activeIndex in
             self?.setButtonIndex(activeIndex)
         }

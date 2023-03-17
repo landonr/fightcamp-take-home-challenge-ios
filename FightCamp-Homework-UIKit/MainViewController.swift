@@ -7,38 +7,59 @@
 //
 
 import UIKit
+import Combine
 
 class MainViewController: UIViewController {
+    enum PackageSection: Hashable {
+        case main
+    }
+
     private let viewModel = MainViewModel()
     private let packageView = PackageView()
-    
-    let stackView: UIStackView = {
-        let stackView = UIStackView()
-        stackView.axis = .vertical
-        stackView.setMargin(.packageSpacing)
-        return stackView
+    private var collectionViewCancellable: AnyCancellable?
+    private var dataSource: UICollectionViewDiffableDataSource<Int, PackageElement>?
+
+    let collectionView: UICollectionView = {
+        let collectionView = UICollectionView(
+            frame: .zero,
+            collectionViewLayout: .createBasicListLayout()
+        )
+        collectionView.register(
+            PackageCollectionViewCell.self,
+            forCellWithReuseIdentifier: PackageCollectionViewCell.identifier
+        )
+
+        return collectionView
     }()
     
     override func viewDidLoad() {
-        view.addSubview(stackView)
         view.backgroundColor = .secondaryBackground
-        stackView.pinToSafeArea(superView: view)
+        view.addSubview(collectionView)
+        collectionView.pinToSafeArea(superView: view)
         
-        stackView.addArrangedSubview(packageView)
-        stackView.isUserInteractionEnabled = true
-        packageView.isUserInteractionEnabled = true
-    }
+        dataSource = UICollectionViewDiffableDataSource(collectionView: collectionView, cellProvider: { collectionView, indexPath, itemIdentifier in
+            guard let cell = collectionView.dequeueReusableCell(
+                withReuseIdentifier: PackageCollectionViewCell.identifier,
+                for: indexPath
+            ) as? PackageCollectionViewCell else {
+                return UICollectionViewCell()
+            }
+            cell.configure(itemIdentifier)
+            return cell
+        })
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        _ = viewModel.package.publisher.sink { [weak packageView] package in
+        collectionViewCancellable = viewModel.package.publisher.sink { [weak self] package in
             if let package = package.first {
-                packageView?.configure(package)
-                packageView?.viewButton.addAction(UIAction(title: "", handler: { _ in
+                self?.packageView.configure(package)
+                self?.packageView.viewButton.addAction(UIAction(title: "", handler: { _ in
                     print("view \(package.title)")
                 }), for: .touchUpInside)
             }
+            
+            var snapshot = NSDiffableDataSourceSnapshot<Int, PackageElement>()
+            snapshot.appendSections([0])
+            snapshot.appendItems(package)
+            self?.dataSource?.apply(snapshot)
         }
     }
 }

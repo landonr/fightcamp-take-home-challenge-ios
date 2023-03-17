@@ -9,7 +9,7 @@
 import Foundation
 
 // MARK: - PackageElement
-struct PackageElement: Codable {
+struct PackageElement: Codable, Hashable {
     let title, desc: String
     let thumbnailUrls: [String]
     let included: [String]
