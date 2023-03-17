@@ -23,7 +23,7 @@ class PackageCollectionViewCell: UICollectionViewCell {
         fatalError("init(coder:) has not been implemented")
     }
 
-    func configure(_ package: PackageElement) {
+    func configure(_ package: FormattedPackageElement) {
         view.configure(package)
     }
 }

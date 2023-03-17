@@ -32,11 +32,13 @@ class MainDataService: IMainDataService {
 
 class MainViewModel {
     let service: IMainDataService = MainDataService()
-    private(set) var package: Package?
+    private(set) var package: [FormattedPackageElement]?
     
     init() {
         Task {
-            package = await service.loadPackage()
+            package = (await service.loadPackage())?.map {
+                FormattedPackageElement(package: $0)
+            }
         }
     }
 }

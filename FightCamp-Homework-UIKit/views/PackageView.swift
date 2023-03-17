@@ -170,50 +170,10 @@ class PackageView: UIView, ObservableObject {
         }
     }
     
-    fileprivate func loadImages(_ package: PackageElement) async {
-        let images = package.thumbnailUrls
-            .compactMap { URL(string: $0) }
-        
-        for (index, imageURL) in images.enumerated() {
+    fileprivate func loadImages(imageURLs: [String]) async {
+        for (index, imageURL) in imageURLs.compactMap({ URL(string: $0) }).enumerated() {
             let image = try? await ImageService.getImage(url: imageURL)
             setImage(index, image)
-        }
-    }
-    
-    private func getAttributes(strikeOut: Bool = false) -> [NSAttributedString.Key : Any] {
-        let paragraphStyle = NSMutableParagraphStyle()
-        paragraphStyle.lineSpacing = CGFloat.lineHeightMultiple
-        guard !strikeOut else {
-            return [
-                .font: UIFont.body,
-                .strikethroughStyle: NSUnderlineStyle.single.rawValue,
-                .foregroundColor: UIColor.disabledLabel,
-                .paragraphStyle: paragraphStyle
-            ]
-        }
-        return [
-            .font: UIFont.body,
-            .paragraphStyle: paragraphStyle
-        ]
-    }
-    
-    private func setAttributedText(_ package: PackageElement) {
-        let includedText = package.included.combine()
-        if let excludedStrings = package.excluded,
-           excludedStrings.count > 0 {
-            let excludedText = excludedStrings.combine(addNewLine: true)
-            let includedAttributedString = NSMutableAttributedString(
-                string: includedText,
-                attributes: getAttributes()
-            )
-            let excludedAttributedString = NSAttributedString(
-                string: excludedText,
-                attributes: getAttributes(strikeOut: true)
-            )
-            includedAttributedString.append(excludedAttributedString)
-            includedExcludedTextView.attributedText = includedAttributedString
-        } else {
-            includedExcludedTextView.text = includedText
         }
     }
     
@@ -232,17 +192,18 @@ class PackageView: UIView, ObservableObject {
         }
     }
     
-    func configure(_ package: PackageElement) {
-        titleLabel.text = package.title.uppercased()
-        descLabel.text = package.desc.capitalized
-        paymentLabel.text = package.payment.capitalized
-        priceLabel.text = "\(package.price)"
-        viewButton.setTitle(package.action.capitalized, for: .normal)
-        
-        setAttributedText(package)
+    func configure(_ package: FormattedPackageElement) {
+        titleLabel.text = package.title
+        descLabel.text = package.desc
+        paymentLabel.text = package.payment
+        priceLabel.text = package.price
+        viewButton.setTitle(package.action, for: .normal)
+        includedExcludedTextView.attributedText = package.attributedBodyString
         Task.detached(
             priority: .userInitiated, operation: { [weak self] in
-                await self?.loadImages(package)
+                await self?.loadImages(
+                    imageURLs: package.thumbnailUrls.compactMap { $0 }
+                )
         })
 
         cancellable = viewModel.$activeIndex.sink { [weak self] activeIndex in

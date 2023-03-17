@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
     private let viewModel = MainViewModel()
     private let packageView = PackageView()
     private var collectionViewCancellable: AnyCancellable?
-    private var dataSource: UICollectionViewDiffableDataSource<Int, PackageElement>?
+    private var dataSource: UICollectionViewDiffableDataSource<Int, FormattedPackageElement>?
 
     let collectionView: UICollectionView = {
         let collectionView = UICollectionView(
@@ -49,7 +49,7 @@ class MainViewController: UIViewController {
         })
     
         collectionViewCancellable = viewModel.package.publisher.sink { [weak self] package in
-            var snapshot = NSDiffableDataSourceSnapshot<Int, PackageElement>()
+            var snapshot = NSDiffableDataSourceSnapshot<Int, FormattedPackageElement>()
             snapshot.appendSections([0])
             snapshot.appendItems(package)
             self?.dataSource?.apply(snapshot)
