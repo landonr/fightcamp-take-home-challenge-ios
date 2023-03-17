@@ -24,40 +24,16 @@ class MainViewController: UIViewController {
         view.backgroundColor = .secondaryBackground
         stackView.pinToSafeArea(superView: view)
         
-        let view = UIView()
-        view.backgroundColor = .purple
-        
         stackView.addArrangedSubview(packageView)
-        stackView.addArrangedSubview(view)
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        if let package = viewModel.loadPackage()?.first {
-            packageView.configure(package)
+        _ = viewModel.package.publisher.sink { [weak packageView] package in
+            if let package = package.first {
+                packageView?.configure(package)
+            }
         }
-    }
-}
-
-class MainViewModel {
-    init() {
-        
-    }
-    
-    func loadPackage() -> Package? {
-        guard let url = Bundle.main.url(forResource: "packages", withExtension: "json") else {
-            return nil
-        }
-        let decoder = JSONDecoder()
-        do {
-            let data = try Data(contentsOf: url, options: .mappedIfSafe)
-            let package = try decoder.decode(Package.self, from: data)
-            print(package)
-            return package
-        } catch {
-            print("error: \(error)")
-        }
-        return nil
     }
 }

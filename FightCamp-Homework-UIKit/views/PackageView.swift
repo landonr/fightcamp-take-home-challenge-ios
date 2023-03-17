@@ -12,6 +12,7 @@ class PackageView: UIView {
     private enum Constants {
         static let numberOfThumbnails = 4
         static let mainImageAspect: CGFloat = 4/3
+        static let buttonHeight: CGFloat = 40
     }
     
     let stackView: UIStackView = {
@@ -91,13 +92,26 @@ class PackageView: UIView {
         return label
     }()
     
+    let buyButton: UIButton = {
+        let button = UIButton()
+        button.titleLabel?.font = .button
+        button.layer.cornerRadius = .buttonRadius
+        button.backgroundColor = .buttonBackground
+        button.setTitleColor(.buttonTitle, for: .normal)
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.heightAnchor.constraint(equalToConstant: Constants.buttonHeight).isActive = true
+        button.setTitle(NSLocalizedString(LocalizableStrings.viewPackage.localizedString, comment: ""), for: .normal)
+        return button
+    }()
+    
     private func setupMainStackView() {
         [
             titleLabel,
             descLabel,
             imageStackView,
             includedExcludedTextView,
-            priceStackView
+            priceStackView,
+            buyButton
         ].forEach { view in
             stackView.addArrangedSubview(view)
         }
@@ -209,12 +223,5 @@ class PackageView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-}
-
-class ImageService {
-    static func getImage(url: URL) async throws -> UIImage? {
-        let data = try Data(contentsOf: url)
-        return UIImage(data: data)
     }
 }
