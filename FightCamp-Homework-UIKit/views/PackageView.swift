@@ -7,50 +7,16 @@
 //
 
 import UIKit
+import Foundation
+import Combine
 
-class ThumbnailButton: UIButton {
-    private var packageImageView: PackageImageView
-    var bordered = false {
-            didSet {
-            setBorder()
-        }
-    }
-
-    fileprivate func setBorder() {
-        if bordered {
-            layer.borderColor = UIColor.brandRed.cgColor
-            layer.borderWidth = .thumbnailBorderWidth
-        } else {
-            layer.borderColor = UIColor.clear.cgColor
-            layer.borderWidth = 0
-        }
-    }
-
-    override init(frame: CGRect) {
-        packageImageView = PackageImageView(frame: frame)
-        super.init(frame: frame)
-        packageImageView.anchorAspectRatio()
-        addSubview(packageImageView)
-        packageImageView.pin(superView: self)
-        layer.cornerRadius = .thumbnailRadius
-        clipsToBounds = true
-        setBorder()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    func setImage(image: UIImage?) {
-        packageImageView.image = image
-    }
-    
-    func getImage() -> UIImage? {
-        return packageImageView.image
-    }
+class PackageViewModel: ObservableObject {
+    @Published var activeIndex = 0
 }
 
-class PackageView: UIView {
+class PackageView: UIView, ObservableObject {
+    @Published private var viewModel = PackageViewModel()
+
     private enum Constants {
         static let numberOfThumbnails = 4
         static let mainImageAspect: CGFloat = 4/3
@@ -134,6 +100,8 @@ class PackageView: UIView {
         return label
     }()
     
+    private var cancellable: AnyCancellable?
+    
     let viewButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .button
@@ -159,15 +127,15 @@ class PackageView: UIView {
     }
     
     private func setupThumbnailStackView() {
-        for _ in 0..<Constants.numberOfThumbnails {
+        for index in 0..<Constants.numberOfThumbnails {
             let thumbnailButton = ThumbnailButton(frame: .zero)
             thumbnailStackView.addArrangedSubview(thumbnailButton)
             
-            thumbnailButton.addAction(UIAction(title: "", handler: { [weak mainImageView] action in
-                if let button = action.sender as? ThumbnailButton {
-                    mainImageView?.image = button.getImage()
-                    button.bordered = true
+            thumbnailButton.addAction(UIAction(title: "", handler: { [weak self] action in
+                Task {
+                    self?.viewModel.activeIndex = index
                 }
+                print("active index \(index)")
             }), for: .touchUpInside)
         }
     }
@@ -191,6 +159,18 @@ class PackageView: UIView {
         }
     }
     
+    fileprivate func setImage(_ index: Int, _ image: UIImage?) {
+        if let button = thumbnailStackView.arrangedSubviews[index] as? ThumbnailButton {
+            button.setImage(image: image)
+            if index == self.viewModel.activeIndex {
+                mainImageView.image = image
+                button.bordered = true
+            } else {
+                button.bordered = false
+            }
+        }
+    }
+    
     fileprivate func loadImages(_ package: PackageElement) async {
         Task {
             let images = package.thumbnailUrls
@@ -198,9 +178,7 @@ class PackageView: UIView {
             
             for (index, imageURL) in images.enumerated() {
                 let image = try await ImageService.getImage(url: imageURL)
-                if let button = thumbnailStackView.arrangedSubviews[index] as? ThumbnailButton {
-                    button.setImage(image: image)
-                }
+                setImage(index, image)
             }
         }
     }
@@ -242,6 +220,21 @@ class PackageView: UIView {
         }
     }
     
+    fileprivate func setButtonIndex(_ activeIndex: Int) {
+        for (buttonIndex, view) in thumbnailStackView.arrangedSubviews.enumerated() {
+            guard let button = view as? ThumbnailButton else {
+                break
+            }
+            
+            if buttonIndex == activeIndex {
+                button.bordered = true
+                mainImageView.image = button.getImage()
+            } else {
+                button.bordered = false
+            }
+        }
+    }
+    
     func configure(_ package: PackageElement) {
         titleLabel.text = package.title.uppercased()
         descLabel.text = package.desc.capitalized
@@ -252,6 +245,11 @@ class PackageView: UIView {
         setAttributedText(package)
         Task {
             await loadImages(package)
+        }
+        
+        debugPrint(viewModel.$activeIndex)
+        cancellable = viewModel.$activeIndex.sink { [weak self] activeIndex in
+            self?.setButtonIndex(activeIndex)
         }
     }
     
