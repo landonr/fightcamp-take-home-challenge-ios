@@ -172,14 +172,12 @@ class PackageView: UIView, ObservableObject {
     }
     
     fileprivate func loadImages(_ package: PackageElement) async {
-        Task {
-            let images = package.thumbnailUrls
-                .compactMap { URL(string: $0) }
-            
-            for (index, imageURL) in images.enumerated() {
-                let image = try await ImageService.getImage(url: imageURL)
-                setImage(index, image)
-            }
+        let images = package.thumbnailUrls
+            .compactMap { URL(string: $0) }
+        
+        for (index, imageURL) in images.enumerated() {
+            let image = try? await ImageService.getImage(url: imageURL)
+            setImage(index, image)
         }
     }
     
@@ -243,9 +241,10 @@ class PackageView: UIView, ObservableObject {
         viewButton.setTitle(package.action.capitalized, for: .normal)
         
         setAttributedText(package)
-        Task {
-            await loadImages(package)
-        }
+        Task.detached(
+            priority: .userInitiated, operation: { [weak self] in
+                await self?.loadImages(package)
+        })
 
         cancellable = viewModel.$activeIndex.sink { [weak self] activeIndex in
             self?.setButtonIndex(activeIndex)
