@@ -17,6 +17,7 @@ class PackageCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         addSubview(view)
         view.pin(superView: self)
+        backgroundColor = .clear
     }
     
     required init?(coder: NSCoder) {

@@ -55,6 +55,7 @@ class PackageView: UIView, ObservableObject {
     
     let includedExcludedTextView: UITextView = {
         let textView = UITextView()
+        textView.backgroundColor = .clear
         textView.font = .body
         textView.isScrollEnabled = false
         textView.isSelectable = false
@@ -141,9 +142,9 @@ class PackageView: UIView, ObservableObject {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        backgroundColor = .primaryBackground
         layer.cornerRadius = .packageRadius
         addSubview(stackView)
-        backgroundColor = .white
         stackView.pin(superView: self)
         
         setupMainStackView()

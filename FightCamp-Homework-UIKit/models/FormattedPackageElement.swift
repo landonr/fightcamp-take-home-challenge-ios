@@ -17,12 +17,13 @@ struct FormattedPackageElement: Hashable {
                 .font: UIFont.body,
                 .strikethroughStyle: NSUnderlineStyle.single.rawValue,
                 .foregroundColor: UIColor.disabledLabel,
-                .paragraphStyle: paragraphStyle
+                .paragraphStyle: paragraphStyle,
             ]
         }
         return [
             .font: UIFont.body,
-            .paragraphStyle: paragraphStyle
+            .paragraphStyle: paragraphStyle,
+            .foregroundColor: UIColor.label,
         ]
     }
     
