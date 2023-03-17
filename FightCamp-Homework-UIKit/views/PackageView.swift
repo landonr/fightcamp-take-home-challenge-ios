@@ -140,22 +140,21 @@ class PackageView: UIView {
         }
     }
     
-    fileprivate func loadImages(_ package: PackageElement) {
-        let images = package.thumbnailUrls
-            .compactMap { URL(string: $0) }
-            .compactMap { ImageService.getImage(url: $0) }
-            .enumerated().forEach { (index, value) in
+    fileprivate func loadImages(_ package: PackageElement) async {
+        Task {
+            let images = package.thumbnailUrls
+                .compactMap { URL(string: $0) }
+            
+            for (index, imageURL) in images.enumerated() {
+                let image = try await ImageService.getImage(url: imageURL)
                 if let imageView = thumbnailStackView.arrangedSubviews[index] as? PackageImageView {
                     if index == 0 {
                         imageView.bordered = true
+                        mainImageView.image = image
                     }
-                    imageView.image = value
+                    imageView.image = image
                 }
             }
-        if let imageString = package.thumbnailUrls.first,
-           let imageURL = URL(string: imageString),
-           let image = ImageService.getImage(url: imageURL) {
-            mainImageView.image = image
         }
     }
     
@@ -203,7 +202,9 @@ class PackageView: UIView {
         priceLabel.text = "\(package.price)"
         
         setAttributedText(package)
-        //        loadImages(package)
+        Task {
+            await loadImages(package)
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -212,13 +213,8 @@ class PackageView: UIView {
 }
 
 class ImageService {
-    static func getImage(url: URL) -> UIImage? {
-        do {
-            let data = try Data(contentsOf: url)
-            return UIImage(data: data)
-        } catch {
-            print(error)
-        }
-        return nil
+    static func getImage(url: URL) async throws -> UIImage? {
+        let data = try Data(contentsOf: url)
+        return UIImage(data: data)
     }
 }
