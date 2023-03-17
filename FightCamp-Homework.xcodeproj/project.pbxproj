@@ -119,6 +119,15 @@
 			path = views;
 			sourceTree = "<group>";
 		};
+		7F5B19F129C408FC00341298 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				7F5B19EF29C4071900341298 /* FormattedPackageElement.swift */,
+				7F5B19DF29C3C46600341298 /* Package.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
 		C1BD976D249AC04D0044B734 = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +150,7 @@
 		C1BD9778249AC04D0044B734 /* FightCamp-Homework-UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				7F5B19F129C408FC00341298 /* models */,
 				C1BD9792249AC3620044B734 /* packages.json */,
 				7F5B19D829C3C33A00341298 /* views */,
 				7CDFE1E4281A09E100BA1A3C /* Info.plist */,
@@ -149,8 +159,6 @@
 				7F5B19DB29C3C36000341298 /* MainViewController.swift */,
 				7F5B19E529C3E6CE00341298 /* MainViewModel.swift */,
 				7F5B19DD29C3C37100341298 /* Helpers.swift */,
-				7F5B19DF29C3C46600341298 /* Package.swift */,
-				7F5B19EF29C4071900341298 /* FormattedPackageElement.swift */,
 				7F5B19E329C3E6BC00341298 /* ImageService.swift */,
 			);
 			path = "FightCamp-Homework-UIKit";
