@@ -1,8 +1,11 @@
 # UIKit Fightcamp app
 
-## this took a little longer than I expected because I'm used to RxSwift so I had to learn a bit more Combine to avoid third party libraries! Great project, the design documents, xcode project and overall documentation made this pretty fun!
+### this took a little longer than I expected because I'm used to RxSwift so I had to learn a bit more Combine to avoid third party libraries! Great project, the design documents, xcode project and overall documentation made this pretty fun!
+
 
 ![](fightcamp-preview.png)
+
+## about
 
 ### Package.swift
 - generated with https://quicktype.io/
