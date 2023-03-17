@@ -25,6 +25,8 @@ class MainViewController: UIViewController {
         stackView.pinToSafeArea(superView: view)
         
         stackView.addArrangedSubview(packageView)
+        stackView.isUserInteractionEnabled = true
+        packageView.isUserInteractionEnabled = true
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -33,6 +35,9 @@ class MainViewController: UIViewController {
         _ = viewModel.package.publisher.sink { [weak packageView] package in
             if let package = package.first {
                 packageView?.configure(package)
+                packageView?.viewButton.addAction(UIAction(title: "", handler: { _ in
+                    print("view \(package.title)")
+                }), for: .touchUpInside)
             }
         }
     }

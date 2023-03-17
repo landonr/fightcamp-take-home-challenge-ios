@@ -34,7 +34,7 @@ extension UIView {
         self.translatesAutoresizingMaskIntoConstraints = false
         
         self.topAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-//        self.bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
+        self.bottomAnchor.constraint(equalTo: superView.safeAreaLayoutGuide.bottomAnchor, constant: 0).isActive = true
         self.leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 0).isActive = true
         self.trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: 0).isActive = true
     }

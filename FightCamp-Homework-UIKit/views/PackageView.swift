@@ -92,7 +92,7 @@ class PackageView: UIView {
         return label
     }()
     
-    let buyButton: UIButton = {
+    let viewButton: UIButton = {
         let button = UIButton()
         button.titleLabel?.font = .button
         button.layer.cornerRadius = .buttonRadius
@@ -100,7 +100,6 @@ class PackageView: UIView {
         button.setTitleColor(.buttonTitle, for: .normal)
         button.translatesAutoresizingMaskIntoConstraints = false
         button.heightAnchor.constraint(equalToConstant: Constants.buttonHeight).isActive = true
-        button.setTitle(NSLocalizedString(LocalizableStrings.viewPackage.localizedString, comment: ""), for: .normal)
         return button
     }()
     
@@ -111,7 +110,7 @@ class PackageView: UIView {
             imageStackView,
             includedExcludedTextView,
             priceStackView,
-            buyButton
+            viewButton
         ].forEach { view in
             stackView.addArrangedSubview(view)
         }
@@ -214,6 +213,7 @@ class PackageView: UIView {
         descLabel.text = package.desc.capitalized
         paymentLabel.text = package.payment.capitalized
         priceLabel.text = "\(package.price)"
+        viewButton.setTitle(package.action.capitalized, for: .normal)
         
         setAttributedText(package)
         Task {

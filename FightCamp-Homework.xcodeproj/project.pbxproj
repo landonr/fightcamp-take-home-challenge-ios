@@ -25,8 +25,6 @@
 		7F5B19E229C3D98A00341298 /* PackageImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19E129C3D98A00341298 /* PackageImageView.swift */; };
 		7F5B19E429C3E6BC00341298 /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19E329C3E6BC00341298 /* ImageService.swift */; };
 		7F5B19E629C3E6CE00341298 /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19E529C3E6CE00341298 /* MainViewModel.swift */; };
-		7F5B19E829C3E99400341298 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 7F5B19E729C3E99400341298 /* Localizable.strings */; };
-		7F5B19EA29C3E9B600341298 /* LocalizableStrings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F5B19E929C3E9B600341298 /* LocalizableStrings.swift */; };
 		C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD9779249AC04D0044B734 /* AppDelegate.swift */; };
 		C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD977B249AC04D0044B734 /* SceneDelegate.swift */; };
 		C1BD9783249AC04E0044B734 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1BD9782249AC04E0044B734 /* Assets.xcassets */; };
@@ -52,8 +50,6 @@
 		7F5B19E129C3D98A00341298 /* PackageImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PackageImageView.swift; sourceTree = "<group>"; };
 		7F5B19E329C3E6BC00341298 /* ImageService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
 		7F5B19E529C3E6CE00341298 /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		7F5B19E729C3E99400341298 /* Localizable.strings */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		7F5B19E929C3E9B600341298 /* LocalizableStrings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalizableStrings.swift; sourceTree = "<group>"; };
 		C1BD9776249AC04D0044B734 /* FC-Homework.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FC-Homework.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1BD9779249AC04D0044B734 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C1BD977B249AC04D0044B734 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -147,8 +143,6 @@
 				7F5B19DD29C3C37100341298 /* Helpers.swift */,
 				7F5B19DF29C3C46600341298 /* Package.swift */,
 				7F5B19E329C3E6BC00341298 /* ImageService.swift */,
-				7F5B19E929C3E9B600341298 /* LocalizableStrings.swift */,
-				7F5B19E729C3E99400341298 /* Localizable.strings */,
 			);
 			path = "FightCamp-Homework-UIKit";
 			sourceTree = "<group>";
@@ -252,7 +246,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1BD9793249AC3620044B734 /* packages.json in Resources */,
-				7F5B19E829C3E99400341298 /* Localizable.strings in Resources */,
 				C1BD9783249AC04E0044B734 /* Assets.xcassets in Resources */,
 				C1BD979E249AFFCC0044B734 /* Font-2.otf in Resources */,
 				C1BD979F249AFFCC0044B734 /* Font-3.otf in Resources */,
@@ -291,7 +284,6 @@
 				C1BD977A249AC04D0044B734 /* AppDelegate.swift in Sources */,
 				C1BD977C249AC04D0044B734 /* SceneDelegate.swift in Sources */,
 				7F5B19E629C3E6CE00341298 /* MainViewModel.swift in Sources */,
-				7F5B19EA29C3E9B600341298 /* LocalizableStrings.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
