@@ -16,6 +16,7 @@ class PackageViewModel: ObservableObject {
 
 class PackageView: UIView, ObservableObject {
     @Published private var viewModel = PackageViewModel()
+    private var cancellable: AnyCancellable?
 
     private enum Constants {
         static let numberOfThumbnails = 4
@@ -99,8 +100,6 @@ class PackageView: UIView, ObservableObject {
         
         return label
     }()
-    
-    private var cancellable: AnyCancellable?
     
     let viewButton: UIButton = {
         let button = UIButton()

@@ -11,10 +11,10 @@ import UIKit
 extension UICollectionViewLayout {
     static func createBasicListLayout() -> UICollectionViewLayout {
         let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                              heightDimension: .estimated(1))
+                                              heightDimension: .estimated(1000))
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0),
-                                               heightDimension: .estimated(1))
+                                               heightDimension: .estimated(1000))
         item.contentInsets = .init(top: 0, leading: .packageSpacing, bottom: 0, trailing: .packageSpacing)
         let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize,
                                                          subitems: [item])

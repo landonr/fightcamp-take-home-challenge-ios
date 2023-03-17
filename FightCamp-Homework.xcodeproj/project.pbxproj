@@ -109,10 +109,10 @@
 		7F5B19D829C3C33A00341298 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				7F5B19ED29C3F90F00341298 /* PackageCollectionViewCell.swift */,
 				7F5B19D929C3C34000341298 /* PackageView.swift */,
 				7F5B19E129C3D98A00341298 /* PackageImageView.swift */,
 				7F5B19EB29C3F16F00341298 /* ThumbnailButton.swift */,
-				7F5B19ED29C3F90F00341298 /* PackageCollectionViewCell.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";

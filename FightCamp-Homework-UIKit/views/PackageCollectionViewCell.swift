@@ -13,10 +13,6 @@ class PackageCollectionViewCell: UICollectionViewCell {
 
     private let view = PackageView()
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         addSubview(view)
